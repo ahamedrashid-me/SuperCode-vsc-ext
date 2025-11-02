@@ -1,4 +1,4 @@
-# 🚀 SuperCode! — VS Code Extension
+# 🚀 SuperCode! — VS Code Extension (beta v0.1)
 
 [![Version](https://img.shields.io/badge/version-0.1.0-blue.svg)](https://github.com/supercode-project/vscode-supercode)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
@@ -6,7 +6,7 @@
 
 A comprehensive **Visual Studio Code extension** for the **SuperCode!** programming language with syntax highlighting, code formatting, intelligent completions, and **integrated program runner**.
 
-## ✨ Features
+## ✨ Features (updating..)
 
 ### 🎨 Syntax Highlighting
 Professional syntax highlighting for all SuperCode! language constructs:
