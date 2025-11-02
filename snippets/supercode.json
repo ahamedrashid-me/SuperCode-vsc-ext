@@ -1,0 +1,196 @@
+{
+  "Function Declaration": {
+    "prefix": "fnc",
+    "body": ["fnc ${1:name}[${2:param1}, ${3:param2}]::${4:int} {", "\t${0}", "}"],
+    "description": "Function declaration"
+  },
+  "Function No Parameters": {
+    "prefix": "fnc0",
+    "body": ["fnc ${1:name}[]::${2:int} {", "\t${0}", "}"],
+    "description": "Function with no parameters"
+  },
+  "Main Function": {
+    "prefix": "main",
+    "body": ["fnc main[]::int {", "\t${0}", "\tget[0];", "}"],
+    "description": "Main entry point"
+  },
+  "If Statement": {
+    "prefix": "if",
+    "body": ["if [${1:condition}] {", "\t${0}", "}"],
+    "description": "If statement"
+  },
+  "If-Else Statement": {
+    "prefix": "ifelse",
+    "body": ["if [${1:condition}] {", "\t${2}", "} else {", "\t${0}", "}"],
+    "description": "If-else statement"
+  },
+  "If-Else If-Else": {
+    "prefix": "ifelseif",
+    "body": ["if [${1:condition}] {", "\t${2}", "} else if [${3:condition2}] {", "\t${4}", "} else {", "\t${0}", "}"],
+    "description": "If-else if-else statement"
+  },
+  "While Loop": {
+    "prefix": "while",
+    "body": ["while [${1:condition}] {", "\t${0}", "}"],
+    "description": "While loop"
+  },
+  "For Loop": {
+    "prefix": "loop",
+    "body": ["loop [int ${1:i} = ${2:0}; ${1:i} < ${3:10}; ${1:i} = ${1:i} + 1] {", "\t${0}", "}"],
+    "description": "For loop (C-style)"
+  },
+  "For Loop (decrement)": {
+    "prefix": "loopdown",
+    "body": ["loop [int ${1:i} = ${2:10}; ${1:i} > ${3:0}; ${1:i} = ${1:i} - 1] {", "\t${0}", "}"],
+    "description": "For loop counting down"
+  },
+  "Group Definition": {
+    "prefix": "grp",
+    "body": ["grp ${1:Name} {", "\t${2:int x},", "\t${3:int y}", "}"],
+    "description": "Group (struct) definition"
+  },
+  "Array Declaration": {
+    "prefix": "arr",
+    "body": ["arr{${1:int}, ${2:10}} ${3:name} = {${0}};"],
+    "description": "Array declaration"
+  },
+  "Array with Initialization": {
+    "prefix": "arrinit",
+    "body": ["arr{${1:int}, ${2:5}} ${3:numbers} = {${4:1}, ${5:2}, ${6:3}, ${7:4}, ${8:5}};"],
+    "description": "Array with initialization"
+  },
+  "Map Declaration": {
+    "prefix": "map",
+    "body": ["map{${1:string}, ${2:int}} ${3:name} = {};"],
+    "description": "Map declaration"
+  },
+  "Variable Declaration (int)": {
+    "prefix": "int",
+    "body": ["int ${1:name} = ${2:0};"],
+    "description": "Integer variable"
+  },
+  "Variable Declaration (byte)": {
+    "prefix": "byte",
+    "body": ["byte ${1:name} = ${2:0};"],
+    "description": "Byte variable"
+  },
+  "Variable Declaration (char)": {
+    "prefix": "char",
+    "body": ["char ${1:name} = '${2:A}';"],
+    "description": "Character variable"
+  },
+  "Variable Declaration (deci)": {
+    "prefix": "deci",
+    "body": ["deci ${1:name} = ${2:0.0};"],
+    "description": "Decimal variable"
+  },
+  "Variable Declaration (string)": {
+    "prefix": "string",
+    "body": ["string ${1:name} = \"${2:text}\";"],
+    "description": "String variable"
+  },
+  "Print Statement": {
+    "prefix": "print",
+    "body": ["print[${0}];"],
+    "description": "Print to stdout"
+  },
+  "Print with String": {
+    "prefix": "prints",
+    "body": ["print[\"${0}\"];"],
+    "description": "Print string literal"
+  },
+  "Get (Return)": {
+    "prefix": "get",
+    "body": ["get[${0}];"],
+    "description": "Return from function and exit"
+  },
+  "Break Statement": {
+    "prefix": "break",
+    "body": ["break;"],
+    "description": "Break from loop"
+  },
+  "Continue Statement": {
+    "prefix": "continue",
+    "body": ["continue;"],
+    "description": "Continue to next loop iteration"
+  },
+  "File Open (Read)": {
+    "prefix": "fopen_read",
+    "body": ["int ${1:fd} = @open[\"${2:file.txt}\", 0];"],
+    "description": "Open file for reading"
+  },
+  "File Open (Write)": {
+    "prefix": "fopen_write",
+    "body": ["int ${1:fd} = @open[\"${2:file.txt}\", 1];"],
+    "description": "Open file for writing"
+  },
+  "File Open (Append)": {
+    "prefix": "fopen_append",
+    "body": ["int ${1:fd} = @open[\"${2:file.txt}\", 2];"],
+    "description": "Open file for appending"
+  },
+  "File Read": {
+    "prefix": "fread",
+    "body": ["@read[${1:fd}, ${2:buffer}];"],
+    "description": "Read from file"
+  },
+  "File Write": {
+    "prefix": "fwrite",
+    "body": ["@write[${1:fd}, ${2:\"data\"}];"],
+    "description": "Write to file"
+  },
+  "File Close": {
+    "prefix": "fclose",
+    "body": ["@close[${1:fd}];"],
+    "description": "Close file"
+  },
+  "Full File I/O Example": {
+    "prefix": "fileio",
+    "body": [
+      "// Write to file",
+      "int fd = @open[\"${1:test.txt}\", 1];",
+      "@write[fd, \"${2:data}\"];",
+      "@close[fd];",
+      "",
+      "// Read from file",
+      "fd = @open[\"${1:test.txt}\", 0];",
+      "string content = \"\";",
+      "@read[fd, content];",
+      "@close[fd];",
+      "",
+      "print[content];"
+    ],
+    "description": "Complete file I/O example"
+  },
+  "String Length": {
+    "prefix": "strlen",
+    "body": ["int ${1:len} = @strlen[${2:string}];"],
+    "description": "Get string length"
+  },
+  "Array Access": {
+    "prefix": "arr_access",
+    "body": ["${1:array}{${2:0}}"],
+    "description": "Array element access"
+  },
+  "Group Access": {
+    "prefix": "grp_access",
+    "body": ["${1:group}.${2:member}"],
+    "description": "Group member access"
+  },
+  "Nested Array Access": {
+    "prefix": "arr_nested",
+    "body": ["${1:matrix}{${2:0}}{${3:0}}"],
+    "description": "Nested array access"
+  },
+  "Comment Single Line": {
+    "prefix": "//",
+    "body": ["// ${0}"],
+    "description": "Single-line comment"
+  },
+  "Comment Multi Line": {
+    "prefix": "/*",
+    "body": ["/* ${1:comment}", "${0}", "*/"],
+    "description": "Multi-line comment"
+  }
+}
+

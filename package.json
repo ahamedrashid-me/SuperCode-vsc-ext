@@ -1,0 +1,91 @@
+{
+  "name": "vscode-supercode",
+  "displayName": "SuperCode! Language Support",
+  "description": "Syntax highlighting, code suggestions, and runner for the SuperCode! language.",
+  "version": "0.1.0",
+  "publisher": "supercode",
+  "engines": { "vscode": "^1.50.0" },
+  "categories": ["Programming Languages", "Debuggers"],
+  "activationEvents": ["onLanguage:supercode"],
+  "main": "./extension.js",
+  "contributes": {
+    "languages": [
+      {
+        "id": "supercode",
+        "aliases": ["SuperCode", "supercode"],
+        "extensions": [".sc", ".supercode"],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "supercode",
+        "scopeName": "source.supercode",
+        "path": "./syntaxes/supercode.tmLanguage.json"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "supercode",
+        "path": "./snippets/supercode.json"
+      }
+    ],
+    "commands": [
+      {
+        "command": "supercode.run",
+        "title": "▶ Run SuperCode! Program",
+        "category": "SuperCode!",
+        "icon": "$(play)"
+      },
+      {
+        "command": "supercode.stop",
+        "title": "⏹ Stop Running Program",
+        "category": "SuperCode!",
+        "icon": "$(stop)"
+      },
+      {
+        "command": "supercode.runFile",
+        "title": "▶ Run with SuperCode!",
+        "category": "SuperCode!"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "supercode.run",
+        "key": "ctrl+shift+r",
+        "mac": "cmd+shift+r",
+        "when": "editorLangId == supercode"
+      },
+      {
+        "command": "supercode.stop",
+        "key": "ctrl+shift+c",
+        "mac": "cmd+shift+c",
+        "when": "editorLangId == supercode"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "supercode.runFile",
+          "group": "1_modification",
+          "when": "resourceLangId == supercode"
+        }
+      ],
+      "explorer/context": [
+        {
+          "command": "supercode.runFile",
+          "group": "2_workspace",
+          "when": "resourceLangId == supercode"
+        }
+      ],
+      "editor/title": [
+        {
+          "command": "supercode.run",
+          "group": "1_run",
+          "when": "resourceLangId == supercode"
+        }
+      ]
+    }
+  }
+}
+
