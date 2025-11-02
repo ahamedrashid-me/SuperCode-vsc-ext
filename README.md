@@ -106,8 +106,8 @@ Creates a symlink to your working directory so changes are live.
 ### 1. Create a SuperCode! File
 ```bash
 # Create a new file
-touch hello.sc
-# Or in VS Code: Ctrl+N → Save as hello.sc
+touch hello.su
+# Or in VS Code: Ctrl+N → Save as hello.su
 ```
 
 ### 2. Write SuperCode!
@@ -147,7 +147,7 @@ Press **Ctrl+Shift+R** (or **Cmd+Shift+R** on Mac) to run the active SuperCode! 
 - Right-click in editor → "▶ Run with SuperCode!"
 
 #### Method 3: File Explorer
-- Right-click a `.sc` file in file explorer
+- Right-click a `.su` file in file explorer
 - Select "▶ Run with SuperCode!"
 
 ### Viewing Output
@@ -278,10 +278,10 @@ Add to `.vscode/settings.json`:
 
 ### Extension Not Activating
 
-**Problem**: Extension doesn't load for `.sc` files
+**Problem**: Extension doesn't load for `.su` files
 
 **Solution**:
-1. Check file extension is `.sc` or `.supercode`
+1. Check file extension is `.su`
 2. Verify language is set to "SuperCode!" (bottom-right selector)
 3. Reload VS Code (Ctrl+R)
 4. Check Extensions panel to ensure extension is enabled
@@ -320,7 +320,7 @@ Add to `.vscode/settings.json`:
 
 **Solution**:
 1. Press Ctrl+Space explicitly
-2. Make sure you're in a `.sc` file
+2. Make sure you're in a `.su` file
 3. Extension needs to be active (try Ctrl+R to reload)
 
 ---
